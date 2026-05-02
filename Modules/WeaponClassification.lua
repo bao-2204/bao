@@ -100,33 +100,33 @@ local v_u_12 = {
         ["IceSpike"] = "Power",
         ["Lightning"] = "Power"
     },
-    ["GetToolStatType"] = function(p1)
+    ["GetToolStatType"] = function(self, p1)
         -- upvalues: (copy) v_u_12
-        return v_u_12.Tools[p1] or "Melee"
+        return self.Tools[p1] or "Melee"
     end,
-    ["GetAbilityStatType"] = function(p2)
+    ["GetAbilityStatType"] = function(self, p2)
         -- upvalues: (copy) v_u_12
-        return v_u_12.Abilities[p2] or "Melee"
+        return self.Abilities[p2] or "Melee"
     end,
-    ["IsAccessory"] = function(p3)
+    ["IsAccessory"] = function(self, p3)
         -- upvalues: (copy) v_u_12
-        return v_u_12.Tools[p3] == "Accessory"
+        return self.Tools[p3] == "Accessory"
     end,
     ["GetStatDamageBonus"] = function(p4, p5)
         return not _G.GetPlayerStat and 0 or _G.GetPlayerStat(p4, p5) * 10
     end,
-    ["CalculateDamageWithStats"] = function(p6, p7, p8, p9)
+    ["CalculateDamageWithStats"] = function(self, p6, p7, p8, p9)
         -- upvalues: (copy) v_u_12
         local v10
         if p9 then
-            v10 = v_u_12.GetAbilityStatType(p8)
+            v10 = self.GetAbilityStatType(p8)
         else
-            v10 = v_u_12.GetToolStatType(p8)
+            v10 = self.GetToolStatType(p8)
         end
         if v10 == "Accessory" then
             return p7, 0, v10
         end
-        local v11 = v_u_12.GetStatDamageBonus(p6, v10)
+        local v11 = self.GetStatDamageBonus(p6, v10)
         return p7 + v11, v11, v10
     end
 }
