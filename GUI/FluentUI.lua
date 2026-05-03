@@ -1,11 +1,3 @@
---discord.gg/boronide, code generated using luamin.js™
-
-
-
---discord.gg/boronide, code generated using luamin.js™
-
-
-
 
 local a, b = {
 	{
@@ -6329,7 +6321,7 @@ local aa = {function()local c,d,e,f,g=b(1)local h,i,j,k,l,m=game:GetService"Ligh
 				})
 			},
 			Background = "rbxassetid://74681809673790",
-			BackgroundTransparency = 0.12,
+			BackgroundTransparency = 0,
 			ThemeAccentColors = {
 				Color3.fromRGB(255, 130, 190),
 				Color3.fromRGB(175, 140, 255)
